@@ -18,6 +18,11 @@ namespace Car_Dealership_MVC
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Vehicles",
+                url: "{controller}/{action}/{id}"
+                );
         }
     }
 }

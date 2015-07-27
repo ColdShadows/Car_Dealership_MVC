@@ -12,12 +12,13 @@ namespace Car_Dealership_MVC.Models
     {
         [Key] //this will make VIN the unique identifier for each car
         public string VIN { get; set; }
-        string make { get; set; }
-        string model { get; set; }
-        string color { get; set; }
-        int year { get; set; }
-        double MSRP { get; set; }
-        double MPG { get; set; }
+        
+        public string make { get; set; }
+        public string model { get; set; }
+        public string color { get; set; }
+        public int year { get; set; }
+        public double MSRP { get; set; }
+        public double MPG { get; set; }
         
     }
 
