@@ -3,10 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
 
 namespace Car_Dealership_MVC.Models
 {
-    class Customer
+    public class Customer
     {
+        [Key] //this will make UserName the unique identifier for each customer
+        public string UserName { get; set; }
+
+        string Name { get; set; }    
+
+        string carVin  { get; set; }
     }
+
+
+    public class CustomerDBContext : DbContext
+    {
+        public DbSet<Customer> users { get; set; }
+    }
+
 }
