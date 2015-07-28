@@ -21,6 +21,8 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.VIN)
         </th>
@@ -36,17 +38,25 @@
         <th>
             @Html.DisplayNameFor(model => model.year)
         </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.price)
+        <th>
+            @Html.DisplayNameFor(model => model.MSRP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MPG)
+        </th>
+        
 
 
 
 
-        </th>*@
+        
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        <th>
+            @Html.DisplayFor(modelItem => item.ID)
+        </th>
         <td>
             @Html.DisplayFor(modelItem => item.VIN)
         </td>

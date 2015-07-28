@@ -53,7 +53,7 @@ namespace Car_Dealership_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "VIN,make,model,year,MPG,color,MSRP")] Vehicle vehicle)
+        public ActionResult Create([Bind(Include = "ID,VIN,make,model,year,MPG,color,MSRP")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {

@@ -10,7 +10,9 @@ namespace Car_Dealership_MVC.Models
 {
     public class Vehicle
     {
-        [Key] //this will make VIN the unique identifier for each car
+
+        public int ID { get; set; }
+        //[Key] //this will make VIN the unique identifier for each car
         public string VIN { get; set; }
         
         public string make { get; set; }

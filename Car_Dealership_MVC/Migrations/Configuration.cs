@@ -20,6 +20,7 @@ namespace Car_Dealership_MVC.Migrations
 
                new Vehicle
                {
+                   
                    VIN = "FT1997BLU",
                    make = "Ford",
                    model = "Taurus",
@@ -30,6 +31,7 @@ namespace Car_Dealership_MVC.Migrations
                },
                new Vehicle
                {
+                   
                    VIN = "FT1997RED",
                    make = "Ford",
                    model = "Taurus",
@@ -40,6 +42,7 @@ namespace Car_Dealership_MVC.Migrations
                },
                new Vehicle
                {
+                   
                    VIN = "FT2005SIL",
                    make = "Ford",
                    model = "Taurus",
@@ -50,6 +53,7 @@ namespace Car_Dealership_MVC.Migrations
                },
                new Vehicle
                {
+                   
                    VIN = "FE2010GRE",
                    make = "Ford",
                    model = "Explorer",
