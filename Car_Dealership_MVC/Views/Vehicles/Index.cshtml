@@ -8,18 +8,72 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
+
+    @using (Html.BeginForm())
+    {
+    <p>
+        Car Make: @Html.TextBox("SearchString") <br />
+        <input type="submit" value="Filter" />
+    </p>
+    }
+
 </p>
 <table class="table">
     <tr>
-        <th></th>
+        <th>
+        <th>
+            @Html.DisplayNameFor(model => model.VIN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.make)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.year)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.price)
+
+
+
+
+        </th>*@
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.VIN }) |
-            @Html.ActionLink("Details", "Details", new { id=item.VIN }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.VIN })
+            @Html.DisplayFor(modelItem => item.VIN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.make)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.color)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MSRP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MPG)
+
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.VIN }) |
+            @Html.ActionLink("Details", "Details", new { id = item.VIN }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.VIN })
         </td>
     </tr>
 }

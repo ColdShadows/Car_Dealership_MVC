@@ -12,12 +12,19 @@ namespace Car_Dealership_MVC.Controllers
 {
     public class VehiclesController : Controller
     {
-        private VehicleDBContext db = new VehicleDBContext();
+        public VehicleDBContext db = new VehicleDBContext();
 
         // GET: Vehicles
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.inventory.ToList());
+            var cars = from car in db.inventory
+                       select car;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                cars = cars.Where(s => s.model.Contains(searchString));
+            }
+            return View(cars);
         }
 
         // GET: Vehicles/Details/5
@@ -46,7 +53,7 @@ namespace Car_Dealership_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "VIN")] Vehicle vehicle)
+        public ActionResult Create([Bind(Include = "VIN,make,model,year,MPG,color,MSRP")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
@@ -54,7 +61,6 @@ namespace Car_Dealership_MVC.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(vehicle);
         }
 
