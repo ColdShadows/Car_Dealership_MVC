@@ -12,7 +12,7 @@
     @using (Html.BeginForm())
     {
     <p>
-        Car Model: @Html.TextBox("SearchString") <br />
+        Car Make: @Html.TextBox("SearchString") <br />
         <input type="submit" value="Filter" />
     </p>
     }
@@ -48,25 +48,25 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.VIN);
+            @Html.DisplayFor(modelItem => item.VIN)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.make);
+            @Html.DisplayFor(modelItem => item.make)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.model);
+            @Html.DisplayFor(modelItem => item.model)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.color)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.year);
+            @Html.DisplayFor(modelItem => item.year)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.MSRP);
+            @Html.DisplayFor(modelItem => item.MSRP)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.MPG);
+            @Html.DisplayFor(modelItem => item.MPG)
 
         </td>
 
