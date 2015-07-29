@@ -16,7 +16,12 @@ namespace Car_Dealership_MVC.Controllers
         private DealershipContext db = new DealershipContext(); 
         public ActionResult Index()
         {
-            return View();
+            List<Customer> customerList = new List<Customer>();
+
+            //var q = from c in db.users
+            //        orderby c.UserName
+            //        select c;
+            return View(db.users.ToList());
         }
 
         public ActionResult About()
