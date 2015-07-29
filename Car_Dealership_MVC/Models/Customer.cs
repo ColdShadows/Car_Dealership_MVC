@@ -13,9 +13,11 @@ namespace Car_Dealership_MVC.Models
         [Key] //this will make UserName the unique identifier for each customer
         public string UserName { get; set; }
 
-        string Name { get; set; }    
+        public string password { get; set; }
 
-        string carVin  { get; set; }
+        public string Name { get; set; }    
+
+        public int carID  { get; set; }
     }
 
 
