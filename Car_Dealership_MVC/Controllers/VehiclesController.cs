@@ -28,7 +28,7 @@ namespace Car_Dealership_MVC.Controllers
         }
 
         // GET: Vehicles/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int id)
         {
             if (id == null)
             {
@@ -129,5 +129,6 @@ namespace Car_Dealership_MVC.Controllers
             }
             base.Dispose(disposing);
         }
+        
     }
 }
