@@ -28,8 +28,9 @@ namespace Car_Dealership_MVC.Migrations
                    color = "Blue",
                    year = 1997,
                    MSRP = 13000,
-                   MPG = 26
-               },
+                   MPG = 26,
+                   imagePath = "~/Images/taurusblue.jpg"
+                 },
                new Vehicle
                {
                    

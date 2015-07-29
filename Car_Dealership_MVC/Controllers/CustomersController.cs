@@ -11,6 +11,7 @@ using Car_Dealership_MVC.DAL;
 
 namespace Car_Dealership_MVC.Controllers
 {
+
     public class CustomersController : Controller
     {
         private DealershipContext db = new DealershipContext();
@@ -18,6 +19,11 @@ namespace Car_Dealership_MVC.Controllers
         // GET: Customers
         public ActionResult Index()
         {
+            Vehicle car = (from v in db.inventory
+                           orderby v.ID
+                     select v).First();
+            ViewBag.name = car.model;
+            ViewBag.path = car.imagePath;
             return View(db.users.ToList());
         }
 
