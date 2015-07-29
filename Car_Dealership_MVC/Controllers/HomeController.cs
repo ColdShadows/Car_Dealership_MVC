@@ -8,12 +8,13 @@ using System.Data.Entity;
 using System.Data;
 using System.Net;
 using Car_Dealership_MVC.DAL;
+using Car_Dealership_MVC.ViewModel;
 
 namespace Car_Dealership_MVC.Controllers
 {
     public class HomeController : Controller
     {
-        private DealershipContext db = new DealershipContext(); 
+        private DealershipContext db = new DealershipContext();
         public ActionResult Index()
         {
             List<Customer> customerList = new List<Customer>();
@@ -35,10 +36,11 @@ namespace Car_Dealership_MVC.Controllers
             q = q.Where(u => u.UserName.Equals(login.Username));
 
             int count = q.Count(u => u.UserName == u.UserName);
-            if (count == 1 && q.First().Password == login.Password )
+
+            if (count == 1 && q.First().Password == login.Password)
             {
                 Customer customer = (from c in q
-                                    select c).First();
+                                     select c).First();
                 ViewBag.isLoggedIn = true;
                 ViewBag.Username = customer.UserName;
                 ViewBag.Name = customer.Name;
@@ -51,23 +53,18 @@ namespace Car_Dealership_MVC.Controllers
         public ActionResult About()
         {
             List<Vehicle> vehicleList = new List<Vehicle>();
-
-           /* var makeQry = from v in db.inventory
-                             orderby v.make.Distinct()
-                             select new 
+            var vehicleQry = from v in db.inventory
+                             group v by new { makeG = v.make, modelG = v.model, yearG = v.year } into vGroup
+                             orderby vGroup.Key.makeG
+                             select new VehicleGroup()
                              {
-                                v.make,
-                                models = from m in v.model
-                                         orderby v.model.Distinct()
-                                         select new {
+                                 Make = vGroup.Key.makeG,
+                                 Model = vGroup.Key.modelG,
+                                 Year = vGroup.Key.yearG,
+                                 VehicleCount = vGroup.Count()
+                             };
 
-
-                                         
-                             }
-            
-                            */
-
-            return View();
+            return View(vehicleQry);
         }
 
         public ActionResult Contact()

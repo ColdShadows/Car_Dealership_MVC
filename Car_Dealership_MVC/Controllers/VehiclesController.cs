@@ -16,15 +16,62 @@ namespace Car_Dealership_MVC.Controllers
         public DealershipContext db = new DealershipContext();
 
         // GET: Vehicles
-        public ActionResult Index(string searchString)
+        public ActionResult Index(string searchString, string sortBy)
         {
+            var modelList = new List<string>();
+            var makeList = new List<string>();
+            var colorList = new List<string>();
+            var msrpList = new List<string>();
+
+            var model = from car in db.inventory
+                        orderby car.model                       
+                        select car.model;
+
+            var make = from car in db.inventory
+                        orderby car.make
+                        select car.make;
+
+            var color = from car in db.inventory
+                        orderby car.color
+                        select car.color;
+
+            var msrp = from car in db.inventory
+                        orderby car.MSRP
+                        select car.MSRP.ToString();
+
+
+            modelList.AddRange(model.Distinct());
+            makeList.AddRange(make.Distinct());
+            msrpList.AddRange(msrp.Distinct());
+            colorList.AddRange(color.Distinct());
+
+            ViewBag.carModel = new SelectList(modelList);
+            ViewBag.carMake = new SelectList(makeList);
+            ViewBag.carColor = new SelectList(colorList);
+            ViewBag.carMSRP = new SelectList(msrpList);
+
+
             var cars = from car in db.inventory
                        select car;
 
-            if (!String.IsNullOrEmpty(searchString))
+            if (!String.IsNullOrEmpty(searchString) && sortBy == "MSRP")
+            {
+                cars = cars.Where(s => s.MSRP.ToString().Contains(searchString));
+            }
+            if (!String.IsNullOrEmpty(searchString) && sortBy == "color")
+            {
+                cars = cars.Where(s => s.color.Contains(searchString));
+            }
+            if (!String.IsNullOrEmpty(searchString) && sortBy == "make")
+            {
+                cars = cars.Where(s => s.make.Contains(searchString));
+            }
+            if (!String.IsNullOrEmpty(searchString) && sortBy == "model")
             {
                 cars = cars.Where(s => s.model.Contains(searchString));
             }
+           
+
             return View(cars);
         }
 

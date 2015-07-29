@@ -12,7 +12,11 @@
     @using (Html.BeginForm())
     {
     <p>
-        Car Make: @Html.TextBox("SearchString") <br />
+        Search: @Html.TextBox("SearchString") <br />
+        Model: @Html.DropDownList("carModel", "All")
+        Price: @Html.DropDownList("carMSRP", "All")
+        Make: @Html.DropDownList("carMake", "All")
+        Color: @Html.DropDownList("carColor", "All")
         <input type="submit" value="Filter" />
     </p>
     }

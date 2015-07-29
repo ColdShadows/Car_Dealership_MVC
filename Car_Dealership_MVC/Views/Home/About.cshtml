@@ -1,4 +1,4 @@
-﻿@model 
+﻿@model IEnumerable<Car_Dealership_MVC.ViewModel.VehicleGroup>
 @{
     ViewBag.Title = "Inventory";
 }
@@ -6,22 +6,36 @@
 
 
 <h2>Totals</h2>
-<table>
+<table class="table">
     <tr>
         <th>
-            Make <br />
+            Make <br /><br />
         </th>
         <th>
-            Model <br />
+            Model <br /><br />
         </th>
         <th>
-            Year <br />
+            Year <br /><br />
         </th>
-                
+        <th>
+            Number in Stock <br /><br />
+        </th>
     </tr>
-    <tr>
-        <td>
-            
-        </td>
-    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Make) <br /><br />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model) <br /><br />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year) <br /><br />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleCount) <br /><br />
+            </td>
+        </tr>
+    }
 </table>
