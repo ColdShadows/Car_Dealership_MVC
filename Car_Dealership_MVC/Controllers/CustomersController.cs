@@ -24,7 +24,7 @@ namespace Car_Dealership_MVC.Controllers
                      select v).First();
             ViewBag.name = car.model;
             ViewBag.path = car.imagePath;
-            return View(db.users.ToList());
+            return View(car);
         }
 
         // GET: Customers/Details/5

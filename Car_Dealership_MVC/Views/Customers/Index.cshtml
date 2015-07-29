@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Car_Dealership_MVC.Models.Customer>
+﻿@model Car_Dealership_MVC.Models.Vehicle
 
 @{
     ViewBag.Title = "Index";
@@ -10,19 +10,6 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-<img src="~/Images/taurusblue.jpg" alt="Car Image" />
-<img src="@ViewBag.path" alt="Car Image" />
+<img src="@Url.Content(ViewBag.path)" alt="Car Image" />
 
-Image Path: @ViewBag.path - - 
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UserName }) |
-            @Html.ActionLink("Details", "Details", new { id=item.UserName }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UserName })
-        </td>
-    </tr>
-}
-
-</table>
+Image Path: @ViewBag.path - -
