@@ -21,7 +21,6 @@ namespace Car_Dealership_MVC.Migrations
             context.inventory.AddOrUpdate( v => v.ID,
                  new Vehicle
                {
-                   
                    VIN = "FT1997BLU",
                    make = "Ford",
                    model = "Taurus",
@@ -40,7 +39,8 @@ namespace Car_Dealership_MVC.Migrations
                    color = "Red",
                    year = 1997,
                    MSRP = 12450,
-                   MPG = 26
+                   MPG = 26,
+                   imagePath = "~/Images/taurusred.jpg"
                },
                new Vehicle
                {
@@ -51,7 +51,8 @@ namespace Car_Dealership_MVC.Migrations
                    color = "Silver",
                    year = 2005,
                    MSRP = 22000,
-                   MPG = 28
+                   MPG = 28,
+                   imagePath = "~/Images/taurussil.jpg"
                },
                new Vehicle
                {
@@ -62,7 +63,8 @@ namespace Car_Dealership_MVC.Migrations
                    color = "Green",
                    year = 2010,
                    MSRP = 32000,
-                   MPG = 21
+                   MPG = 21,
+                   imagePath = "~/Images/explorergre.jpg"
                },
                new Vehicle
                {
@@ -72,7 +74,8 @@ namespace Car_Dealership_MVC.Migrations
                    color = "Green",
                    year = 2007,
                    MSRP = 26000,
-                   MPG = 19
+                   MPG = 19,
+                   imagePath = "~/Images/explorergre2.jpg"
                },
                new Vehicle
                {
@@ -82,7 +85,8 @@ namespace Car_Dealership_MVC.Migrations
                    color = "White",
                    year = 2010,
                    MSRP = 35000,
-                   MPG = 19
+                   MPG = 19,
+                   imagePath = "~/Images/explorerwhi.jpg"
                },
                new Vehicle
                {
@@ -92,7 +96,8 @@ namespace Car_Dealership_MVC.Migrations
                    color = "Red",
                    year = 2008,
                    MSRP = 29000,
-                   MPG = 24
+                   MPG = 24,
+                   imagePath = "~/Images/impalared.jpg"
                },
                 new Vehicle
                {
@@ -102,8 +107,9 @@ namespace Car_Dealership_MVC.Migrations
                    color = "Red",
                    year = 2012,
                    MSRP = 36000,
-                   MPG = 27
-               },
+                   MPG = 27,
+                    imagePath = "~/Images/impalared.jpg"
+                },
                new Vehicle
                {
                    VIN = "CI2008BLU",
@@ -112,7 +118,8 @@ namespace Car_Dealership_MVC.Migrations
                    color = "Blue",
                    year = 2008,
                    MSRP = 30000,
-                   MPG = 24
+                   MPG = 24,
+                   imagePath = "~/Images/impalablue.jpg"
                },
                new Vehicle
                {
@@ -122,7 +129,8 @@ namespace Car_Dealership_MVC.Migrations
                    color = "Silver",
                    year = 2013,
                    MSRP = 46000,
-                   MPG = 29
+                   MPG = 29,
+                   imagePath = "~/Images/malibusil.jpg"
                },
                 new Vehicle
                 {
@@ -132,7 +140,8 @@ namespace Car_Dealership_MVC.Migrations
                     color = "Silver",
                     year = 2010,
                     MSRP = 38000,
-                    MPG = 27
+                    MPG = 27,
+                    imagePath = "~/Images/malibusil2.jpg"
                 },
                 new Vehicle
                 {
@@ -142,7 +151,8 @@ namespace Car_Dealership_MVC.Migrations
                     color = "Gold",
                     year = 2010,
                     MSRP = 39000,
-                    MPG = 27
+                    MPG = 27,
+                    imagePath = "~/Images/malibugol.jpg"
                 },
                 new Vehicle
                 {
@@ -152,7 +162,8 @@ namespace Car_Dealership_MVC.Migrations
                     color = "Green",
                     year = 2010,
                     MSRP = 35000,
-                    MPG = 27
+                    MPG = 27,
+                    imagePath = "~/Images/accordgre.jpg"
                 },
                new Vehicle
                {
@@ -162,7 +173,8 @@ namespace Car_Dealership_MVC.Migrations
                    color = "Black",
                    year = 2010,
                    MSRP = 39000,
-                   MPG = 27
+                   MPG = 27,
+                   imagePath = "~/Images/accordbla.jpg"
                },
                new Vehicle
                {
@@ -172,7 +184,8 @@ namespace Car_Dealership_MVC.Migrations
                    color = "Black",
                    year = 2008,
                    MSRP = 35000,
-                   MPG = 24
+                   MPG = 24,
+                   imagePath = "~/Images/accordbla2.jpg"
                },
                new Vehicle
                {
@@ -182,7 +195,8 @@ namespace Car_Dealership_MVC.Migrations
                    color = "Blue",
                    year = 2004,
                    MSRP = 21000,
-                   MPG = 20
+                   MPG = 20,
+                   imagePath = "~/Images/odysseyblue.jpg"
                },
                new Vehicle
                {
@@ -192,7 +206,8 @@ namespace Car_Dealership_MVC.Migrations
                    color = "Blue",
                    year = 2003,
                    MSRP = 19000,
-                   MPG = 18
+                   MPG = 18,
+                   imagePath = "~/Images/odysseyblue2.jpg"
                },
                new Vehicle
                {
@@ -202,7 +217,8 @@ namespace Car_Dealership_MVC.Migrations
                    color = "Silver",
                    year = 2004,
                    MSRP = 23000,
-                   MPG = 20
+                   MPG = 20,
+                   imagePath = "~/Images/odysseysil.jpg"
                },
                new Vehicle
                {
@@ -212,7 +228,8 @@ namespace Car_Dealership_MVC.Migrations
                    color = "Blue",
                    year = 2007,
                    MSRP = 28000,
-                   MPG = 17
+                   MPG = 17,
+                   imagePath = "~/Images/libertyblue.jpg"
                },
                new Vehicle
                {
@@ -222,7 +239,8 @@ namespace Car_Dealership_MVC.Migrations
                    color = "Blue",
                    year = 2010,
                    MSRP = 37000,
-                   MPG = 20
+                   MPG = 20,
+                   imagePath = "~/Images/libertyblue2.jpg"
                },
                new Vehicle
                {
@@ -232,7 +250,8 @@ namespace Car_Dealership_MVC.Migrations
                    color = "Black",
                    year = 2007,
                    MSRP = 30000,
-                   MPG = 17
+                   MPG = 17,
+                   imagePath = "~/Images/libertybla.jpg"
                },
                new Vehicle
                {
@@ -242,7 +261,8 @@ namespace Car_Dealership_MVC.Migrations
                    color = "Red",
                    year = 2005,
                    MSRP = 28000,
-                   MPG = 17
+                   MPG = 17,
+                   imagePath = "~/Images/wranglerred.jpg"
                },
                new Vehicle
                {
@@ -252,7 +272,8 @@ namespace Car_Dealership_MVC.Migrations
                    color = "Red",
                    year = 2008,
                    MSRP = 35000,
-                   MPG = 21
+                   MPG = 21,
+                   imagePath = "~/Images/wranglerred2.jpg"
                },
                new Vehicle
                {
@@ -262,7 +283,8 @@ namespace Car_Dealership_MVC.Migrations
                    color = "Black",
                    year = 2007,
                    MSRP = 30000,
-                   MPG = 17
+                   MPG = 17,
+                   imagePath = "~/Images/wranglerbla2.jpg"
                }
 
               
