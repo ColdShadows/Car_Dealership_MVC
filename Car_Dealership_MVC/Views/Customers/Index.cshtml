@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Car_Dealership_MVC.Models.Customer>
+﻿@model Car_Dealership_MVC.Models.Vehicle
 
 @{
     ViewBag.Title = "Index";
@@ -9,36 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReleaseDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Genre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rating)
 
+<img src="@Url.Content(ViewBag.path)" alt="Car Image" />
 
-
-        </th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UserName }) |
-            @Html.ActionLink("Details", "Details", new { id=item.UserName }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UserName })
-        </td>
-    </tr>
-}
-
-</table>
+Image Path: @ViewBag.path - -

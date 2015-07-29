@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -200,6 +201,34 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\accordbla.jpg" />
+    <Content Include="Images\accordbla2.jpg" />
+    <Content Include="Images\accordgre.jpg" />
+    <Content Include="Images\BackupPlan.jpg" />
+    <Content Include="Images\explorergol.jpg" />
+    <Content Include="Images\explorergre.jpg" />
+    <Content Include="Images\explorergre2.jpg" />
+    <Content Include="Images\explorerwhi.jpg" />
+    <Content Include="Images\impalablue.jpg" />
+    <Content Include="Images\impalared.jpg" />
+    <Content Include="Images\impalared2.jpg" />
+    <Content Include="Images\LegoMovie.jpg" />
+    <Content Include="Images\libertybla.jpg" />
+    <Content Include="Images\libertyblue.jpg" />
+    <Content Include="Images\libertyblue2.jpg" />
+    <Content Include="Images\malibugol.jpg" />
+    <Content Include="Images\malibusil.jpg" />
+    <Content Include="Images\malibusil2.jpg" />
+    <Content Include="Images\odysseyblue.jpg" />
+    <Content Include="Images\odysseyblue2.jpg" />
+    <Content Include="Images\odysseysil.jpg" />
+    <Content Include="Images\taurusblue.jpg" />
+    <Content Include="Images\taurusred.jpg" />
+    <Content Include="Images\taurussil.jpg" />
+    <Content Include="Images\Wolverine.jpg" />
+    <Content Include="Images\wranglerbla.jpg" />
+    <Content Include="Images\wranglerred.jpg" />
+    <Content Include="Images\wranglerred2.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
