@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Car_Dealership_MVC.Models;
+using System.Data.Entity;
+using System.Data;
+using System.Net;
 
 namespace Car_Dealership_MVC.Controllers
 {
     public class HomeController : Controller
     {
+        private VehicleDBContext db = new VehicleDBContext(); 
         public ActionResult Index()
         {
             return View();
@@ -15,7 +20,22 @@ namespace Car_Dealership_MVC.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            List<Vehicle> vehicleList = new List<Vehicle>();
+
+           /* var makeQry = from v in db.inventory
+                             orderby v.make.Distinct()
+                             select new 
+                             {
+                                v.make,
+                                models = from m in v.model
+                                         orderby v.model.Distinct()
+                                         select new {
+
+
+                                         
+                             }
+            
+                            */
 
             return View();
         }
