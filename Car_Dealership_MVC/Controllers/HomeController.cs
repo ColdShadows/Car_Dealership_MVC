@@ -36,6 +36,7 @@ namespace Car_Dealership_MVC.Controllers
             q = q.Where(u => u.UserName.Equals(login.Username));
 
             int count = q.Count(u => u.UserName == u.UserName);
+
             if (count == 1 && q.First().Password == login.Password)
             {
                 Customer customer = (from c in q
@@ -47,6 +48,7 @@ namespace Car_Dealership_MVC.Controllers
             }
             return View();
         }
+
 
         public ActionResult About()
         {
@@ -61,9 +63,6 @@ namespace Car_Dealership_MVC.Controllers
                                  Year = vGroup.Key.yearG,
                                  VehicleCount = vGroup.Count()
                              };
-                                                 
-                
-                            
 
             return View(vehicleQry);
         }
