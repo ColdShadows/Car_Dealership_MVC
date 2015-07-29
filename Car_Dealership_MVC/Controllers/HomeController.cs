@@ -17,12 +17,36 @@ namespace Car_Dealership_MVC.Controllers
         public ActionResult Index()
         {
             List<Customer> customerList = new List<Customer>();
-
-            //var q = from c in db.users
-            //        orderby c.UserName
-            //        select c;
-            return View(db.users.ToList());
+            ViewBag.isLoggedIn = false;
+            LoginViewModel login = new LoginViewModel();
+            return View(login);
         }
+
+        [HttpPost]
+        public ActionResult Index(LoginViewModel login)
+        {
+            ViewBag.Message = "This log in didn't break anything.";
+
+            ViewBag.isLoggedIn = false;
+
+            var q = from c in db.users
+                    where login.Username == c.UserName
+                    select c;
+            q = q.Where(u => u.UserName.Equals(login.Username));
+
+            int count = q.Count(u => u.UserName == u.UserName);
+            if (count == 1 && q.First().Password == login.Password )
+            {
+                Customer customer = (from c in q
+                                    select c).First();
+                ViewBag.isLoggedIn = true;
+                ViewBag.Username = customer.UserName;
+                ViewBag.Name = customer.Name;
+                ViewBag.carID = customer.carID;
+            }
+            return View();
+        }
+
 
         public ActionResult About()
         {
