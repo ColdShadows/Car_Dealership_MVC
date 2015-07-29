@@ -19,11 +19,4 @@ namespace Car_Dealership_MVC.Models
 
         public int carID  { get; set; }
     }
-
-
-    public class CustomerDBContext : DbContext
-    {
-        public DbSet<Customer> users { get; set; }
-    }
-
 }

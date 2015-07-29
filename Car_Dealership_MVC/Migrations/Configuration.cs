@@ -6,21 +6,21 @@ namespace Car_Dealership_MVC.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Car_Dealership_MVC.Models.VehicleDBContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Car_Dealership_MVC.DAL.DealershipContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Car_Dealership_MVC.Models.VehicleDBContext";
+            ContextKey = "Car_Dealership_MVC.DAL.DealershipContext";
         }
 
-        protected override void Seed(Car_Dealership_MVC.Models.VehicleDBContext context)
+        protected override void Seed(Car_Dealership_MVC.DAL.DealershipContext context)
         {
             context.inventory.AddOrUpdate(i => i.VIN,
 
                new Vehicle
                {
-                   
+
                    VIN = "FT1997BLU",
                    make = "Ford",
                    model = "Taurus",
@@ -31,7 +31,7 @@ namespace Car_Dealership_MVC.Migrations
                },
                new Vehicle
                {
-                   
+
                    VIN = "FT1997RED",
                    make = "Ford",
                    model = "Taurus",
@@ -42,7 +42,7 @@ namespace Car_Dealership_MVC.Migrations
                },
                new Vehicle
                {
-                   
+
                    VIN = "FT2005SIL",
                    make = "Ford",
                    model = "Taurus",
@@ -53,7 +53,7 @@ namespace Car_Dealership_MVC.Migrations
                },
                new Vehicle
                {
-                   
+
                    VIN = "FE2010GRE",
                    make = "Ford",
                    model = "Explorer",
@@ -93,15 +93,15 @@ namespace Car_Dealership_MVC.Migrations
                    MPG = 24
                },
                 new Vehicle
-               {
-                   VIN = "CI2012RED",
-                   make = "Chevy",
-                   model = "Impala",
-                   color = "Red",
-                   year = 2012,
-                   MSRP = 36000,
-                   MPG = 27
-               },
+                {
+                    VIN = "CI2012RED",
+                    make = "Chevy",
+                    model = "Impala",
+                    color = "Red",
+                    year = 2012,
+                    MSRP = 36000,
+                    MPG = 27
+                },
                new Vehicle
                {
                    VIN = "CI2008BLU",
@@ -123,35 +123,35 @@ namespace Car_Dealership_MVC.Migrations
                    MPG = 29
                },
                 new Vehicle
-               {
-                   VIN = "CM2010SIL",
-                   make = "Chevy",
-                   model = "Malibu",
-                   color = "Silver",
-                   year = 2010,
-                   MSRP = 38000,
-                   MPG = 27
-               },
+                {
+                    VIN = "CM2010SIL",
+                    make = "Chevy",
+                    model = "Malibu",
+                    color = "Silver",
+                    year = 2010,
+                    MSRP = 38000,
+                    MPG = 27
+                },
                 new Vehicle
-               {
-                   VIN = "CM2010GOL",
-                   make = "Chevy",
-                   model = "Malibu",
-                   color = "Gold",
-                   year = 2010,
-                   MSRP = 39000,
-                   MPG = 27
-               },
+                {
+                    VIN = "CM2010GOL",
+                    make = "Chevy",
+                    model = "Malibu",
+                    color = "Gold",
+                    year = 2010,
+                    MSRP = 39000,
+                    MPG = 27
+                },
                 new Vehicle
-               {
-                   VIN = "HA2010GRE",
-                   make = "Honda",
-                   model = "Accord",
-                   color = "Green",
-                   year = 2010,
-                   MSRP = 35000,
-                   MPG = 27
-               },
+                {
+                    VIN = "HA2010GRE",
+                    make = "Honda",
+                    model = "Accord",
+                    color = "Green",
+                    year = 2010,
+                    MSRP = 35000,
+                    MPG = 27
+                },
                new Vehicle
                {
                    VIN = "HA2010BLA",
@@ -266,10 +266,7 @@ namespace Car_Dealership_MVC.Migrations
 
 
                 );
-            
-
-
-
         }
     }
+
 }
