@@ -84,7 +84,7 @@ namespace Car_Dealership_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "VIN")] Vehicle vehicle)
+        public ActionResult Edit([Bind(Include = "ID,VIN,make,model,year,MPG,color,MSRP")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
