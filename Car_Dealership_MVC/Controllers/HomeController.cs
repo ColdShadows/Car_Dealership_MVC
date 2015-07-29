@@ -7,12 +7,13 @@ using Car_Dealership_MVC.Models;
 using System.Data.Entity;
 using System.Data;
 using System.Net;
+using Car_Dealership_MVC.DAL;
 
 namespace Car_Dealership_MVC.Controllers
 {
     public class HomeController : Controller
     {
-        private VehicleDBContext db = new VehicleDBContext(); 
+        private DealershipContext db = new DealershipContext(); 
         public ActionResult Index()
         {
             return View();

@@ -21,11 +21,9 @@ namespace Car_Dealership_MVC.Models
         public int year { get; set; }
         public double MSRP { get; set; }
         public double MPG { get; set; }
+        public string imagePath { get; set; }
         
     }
 
-    public class VehicleDBContext : DbContext
-    {
-       public DbSet<Vehicle> inventory { get; set; }
-    }
+    
 }

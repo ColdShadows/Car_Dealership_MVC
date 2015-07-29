@@ -7,12 +7,13 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Car_Dealership_MVC.Models;
+using Car_Dealership_MVC.DAL;
 
 namespace Car_Dealership_MVC.Controllers
 {
     public class CustomersController : Controller
     {
-        private CustomerDBContext db = new CustomerDBContext();
+        private DealershipContext db = new DealershipContext();
 
         // GET: Customers
         public ActionResult Index()
