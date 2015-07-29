@@ -7,16 +7,16 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Index", "Vehicles", FormMethod.Get))
     {
     <p>
-        Search: @Html.TextBox("SearchString") <br />
+        
+        Make: @Html.DropDownList("carMake", "All")        
         Model: @Html.DropDownList("carModel", "All")
-        Price: @Html.DropDownList("carMSRP", "All")
-        Make: @Html.DropDownList("carMake", "All")
         Color: @Html.DropDownList("carColor", "All")
+        Price: @Html.DropDownList("carMSRP", "All")
         <input type="submit" value="Filter" />
     </p>
     }

@@ -16,7 +16,8 @@ namespace Car_Dealership_MVC.Controllers
         public DealershipContext db = new DealershipContext();
 
         // GET: Vehicles
-        public ActionResult Index(string searchString, string sortBy)
+        
+        public ActionResult Index(string carMake, string carModel, string carColor, string carMSRP)
         {
             var modelList = new List<string>();
             var makeList = new List<string>();
@@ -54,21 +55,23 @@ namespace Car_Dealership_MVC.Controllers
             var cars = from car in db.inventory
                        select car;
 
-            if (!String.IsNullOrEmpty(searchString) && sortBy == "MSRP")
+            
+
+            if (!String.IsNullOrEmpty(carMake) )
             {
-                cars = cars.Where(s => s.MSRP.ToString().Contains(searchString));
+                cars = cars.Where(s => s.make.Contains(carMake));
             }
-            if (!String.IsNullOrEmpty(searchString) && sortBy == "color")
+            if (!String.IsNullOrEmpty(carModel) )
             {
-                cars = cars.Where(s => s.color.Contains(searchString));
+                cars = cars.Where(s => s.model.Contains(carModel));
             }
-            if (!String.IsNullOrEmpty(searchString) && sortBy == "make")
+            if (!String.IsNullOrEmpty(carMSRP) )
             {
-                cars = cars.Where(s => s.make.Contains(searchString));
+                cars = cars.Where(s => s.MSRP.ToString().Contains(carMSRP));
             }
-            if (!String.IsNullOrEmpty(searchString) && sortBy == "model")
+            if (!String.IsNullOrEmpty(carColor))
             {
-                cars = cars.Where(s => s.model.Contains(searchString));
+                cars = cars.Where(s => s.color.Contains(carColor));
             }
            
 
