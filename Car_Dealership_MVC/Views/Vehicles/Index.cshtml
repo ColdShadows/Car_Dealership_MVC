@@ -12,7 +12,11 @@
     @using (Html.BeginForm())
     {
     <p>
-        Car Make: @Html.TextBox("SearchString") <br />
+        Search: @Html.TextBox("SearchString") <br />
+        Model: @Html.DropDownList("carModel", "All")
+        Price: @Html.DropDownList("carMSRP", "All")
+        Make: @Html.DropDownList("carMake", "All")
+        Color: @Html.DropDownList("carColor", "All")
         <input type="submit" value="Filter" />
     </p>
     }
@@ -21,6 +25,8 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.VIN)
         </th>
@@ -36,17 +42,25 @@
         <th>
             @Html.DisplayNameFor(model => model.year)
         </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.price)
+        <th>
+            @Html.DisplayNameFor(model => model.MSRP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MPG)
+        </th>
+        
 
 
 
 
-        </th>*@
+        
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        <th>
+            @Html.DisplayFor(modelItem => item.ID)
+        </th>
         <td>
             @Html.DisplayFor(modelItem => item.VIN)
         </td>
@@ -71,9 +85,9 @@
         </td>
 
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.VIN }) |
-            @Html.ActionLink("Details", "Details", new { id = item.VIN }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.VIN })
+           
+            @Html.ActionLink("Details", "Details", new { id = item.ID })            
+            <input type="submit" value="Buy" />
         </td>
     </tr>
 }

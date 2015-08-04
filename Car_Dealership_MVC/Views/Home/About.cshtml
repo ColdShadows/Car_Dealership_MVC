@@ -1,7 +1,41 @@
-﻿@{
-    ViewBag.Title = "About";
+﻿@model IEnumerable<Car_Dealership_MVC.ViewModel.VehicleGroup>
+@{
+    ViewBag.Title = "Inventory";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h1>@ViewBag.Title.</h1>
 
-<p>Use this area to provide additional information.</p>
+
+<h2>Totals</h2>
+<table class="table">
+    <tr>
+        <th>
+            Make <br /><br />
+        </th>
+        <th>
+            Model <br /><br />
+        </th>
+        <th>
+            Year <br /><br />
+        </th>
+        <th>
+            Number in Stock <br /><br />
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Make) <br /><br />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model) <br /><br />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year) <br /><br />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleCount) <br /><br />
+            </td>
+        </tr>
+    }
+</table>

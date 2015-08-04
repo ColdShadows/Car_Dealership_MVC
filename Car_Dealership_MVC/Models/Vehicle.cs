@@ -10,7 +10,9 @@ namespace Car_Dealership_MVC.Models
 {
     public class Vehicle
     {
-        [Key] //this will make VIN the unique identifier for each car
+        [Key]
+        public int ID { get; set; }
+        //[Key] //this will make VIN the unique identifier for each car
         public string VIN { get; set; }
         
         public string make { get; set; }
@@ -19,11 +21,9 @@ namespace Car_Dealership_MVC.Models
         public int year { get; set; }
         public double MSRP { get; set; }
         public double MPG { get; set; }
+        public string imagePath { get; set; }
         
     }
 
-    public class VehicleDBContext : DbContext
-    {
-       public DbSet<Vehicle> inventory { get; set; }
-    }
+    
 }

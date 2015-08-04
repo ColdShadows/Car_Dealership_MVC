@@ -23,6 +23,10 @@ namespace Car_Dealership_MVC
                 name: "Vehicles",
                 url: "{controller}/{action}/{id}"
                 );
+            routes.MapRoute(
+                name: "About",
+                url: "{controller}/{action}/{id}"
+                );
         }
     }
 }
